@@ -1,0 +1,29 @@
+{
+  "name": "cryptoverse-vue3",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5050"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "@popperjs/core": "^2.11.5",
+    "axios": "^0.26.1",
+    "bootstrap": "^5.1.3",
+    "tslint": "^6.1.3",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "node-sass": "^7.0.1",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "vite": "^2.9.1"
+  }
+}

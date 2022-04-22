@@ -1,0 +1,69 @@
+@mixin CryptoIconSize() {
+    width: $crypto_icon_size;
+    height: $crypto_icon_size;
+}
+
+@mixin SearchBarBorder() {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $primary_color;
+}
+
+@mixin FilterStyle() {
+    .onScroll {
+        position: fixed;
+        width: 100%;
+        transition: all .2s ease-in-out;
+        background: #000000;
+        top: -5%;
+        height: 100px;
+    }
+
+    .search_wrapper {
+        margin-bottom: $rem_pos*4;
+        margin-top: $rem_pos*5;
+
+        input {
+          width: $width_percent_size - 30;
+          display: block;
+          margin: auto;
+          padding:$rem_pos*0.5;
+          outline: none;
+          background: none;
+          @include SearchBarBorder();
+        }
+    }
+
+    .selected_container {
+        justify-content: center;
+        padding-left: $rem_pos*1.5;
+        .selected_filter {
+          select {
+            padding: $rem_pos*0.5;
+            width: $width_percent_size - 20;
+            outline: none;
+          }
+        }
+    }
+}
+
+
+@mixin TableStyle() {
+    .table {
+        margin-bottom: $rem_pos*8 !important;
+        margin-top: $rem_pos*4;
+        padding-top: $rem_pos*0.2;
+        border-bottom: 2px solid $primary_color;
+    }
+}
+
+
+@mixin PercentClassStyle() {
+    .green {
+        color: $high_24h !important;
+    }
+    .red {
+        color: $low_24h !important;
+    }
+}

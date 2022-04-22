@@ -1,0 +1,100 @@
+{
+    "navbarComponent": [
+        {
+            "id": 0,
+            "name": "Home",
+            "link": "/",
+            "icon": "fa-solid fa-house-chimney"
+        },
+        {
+            "id": 1,
+            "name": "Exchanges",
+            "link": "/exchanges",
+            "icon": "fa-solid fa-right-left"
+        },
+        {
+            "id": 2,
+            "name": "Trending",
+            "link": "/trending",
+            "icon": "fa-solid fa-fire"
+        },
+        {
+            "id": 3,
+            "name": "Category",
+            "link": "/category",
+            "icon": "fa-brands fa-buffer"
+        }
+    ],
+
+    "homeSelectFilterComponent": [
+        {
+            "id": 4,
+            "label": "Price",
+            "name": "High to Low (Price)",
+            "value": "1",
+            "name_bis": "Low to High (Price)",
+            "value_bis": "2"
+        },
+        {
+            "id": 5,
+            "label": "Cap",
+            "name": "High to Low (Cap)",
+            "value": "3",
+            "name_bis": "Low to High (Cap)",
+            "value_bis": "4"
+        },
+        {
+            "id": 6,
+            "label": "24h",
+            "name": "High to Low (24h)",
+            "value": "5",
+            "name_bis": "Low to High (24h)",
+            "value_bis": "6"
+        }
+    ],
+
+    "exchangeSelectFilterComponent": [
+        {
+            "id": 7,
+            "label": "Year",
+            "name":"Newest to Oldest (Year)",
+            "value": "7",
+            "name_bis": "Oldest to Newest (Year)",
+            "value_bis": "8"
+        },
+        {
+            "id": 8,
+            "label": "Trade",
+            "name":"High to Low (Trade)",
+            "value": "9",
+            "name_bis": "Low to High (Trade)",
+            "value_bis": "10"
+        }
+    ],
+    "categorySelectFilterComponent": [
+        {
+            "id": 9,
+            "label": "Cap",
+            "name":"High to Low (Cap)",
+            "value": "11",
+            "name_bis": "Low to High (Cap)",
+            "value_bis": "12"
+        },
+        {
+            "id": 10,
+            "label": "24h Vol",
+            "name":"High to Low (24h Vol)",
+            "value": "13",
+            "name_bis": "Low to High (24h Vol)",
+            "value_bis": "14"
+        },
+        {
+            "id": 10,
+            "label": "24h Percent",
+            "name":"High to Low (24h Percent)",
+            "value": "15",
+            "name_bis": "Low to High (24h Percent)",
+            "value_bis": "16"
+        }
+    ]
+}
