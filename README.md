@@ -2,7 +2,7 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
-Website link : https://cutt.ly/fGtZP2H
+Website link :https://cutt.ly/8GtVFDr
 
 ## Customize configuration
 
