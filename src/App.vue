@@ -22,7 +22,7 @@ import HeaderData from '@/components/HeaderData.vue'
   font-size: $font_size_typo;
 
   @media(min-width: $desktop_breakpoint) {
-    font-size: $font_size_typo*2;
+    font-size: $font_size_typo*1.4;
   }
 }
 html, body {
