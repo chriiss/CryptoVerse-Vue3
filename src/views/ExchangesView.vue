@@ -32,11 +32,8 @@ export default {
       })
     },
     handleScroll() {
-      if(window.pageYOffset>50){
-        if(this.view.topOfPage) this.view.topOfPage = false;
-      } else {
-        if(!this.view.topOfPage) this.view.topOfPage = true;
-      }
+      let scroll = (window.pageYOffset>50) ? this.view.topOfPage = false : this.view.topOfPage = true
+      return scroll;
     }
   },
   computed: {
@@ -46,26 +43,14 @@ export default {
       })
     },
     getSelectFilterExchange() {
-      if(this.sortBy === "7") {
-        return this.exchangesData.sort((a,b) => {
-          return b.year_established - a.year_established
-        })
+
+      const sortTypesExchange = {
+        7: (a, b) => b.year_established - a.year_established,
+        8: (a, b) => a.year_established - b.year_established,
+        9: (a, b) => b.trade_volume_24h_btc - a.trade_volume_24h_btc,
+        10: (a, b) => a.trade_volume_24h_btc - b.trade_volume_24h_btc,
       }
-      if(this.sortBy === "8") {
-        return this.exchangesData.sort((a,b) => {
-          return a.year_established - b.year_established
-        })
-      }
-      if(this.sortBy === "9") {
-        return this.exchangesData.sort((a,b) => {
-          return b.trade_volume_24h_btc - a.trade_volume_24h_btc
-        })
-      }
-      if(this.sortBy === "10") {
-        return this.exchangesData.sort((a,b) => {
-          return a.trade_volume_24h_btc - b.trade_volume_24h_btc
-        })
-      }
+      return this.exchangesData.sort(sortTypesExchange[this.sortBy]);
     }
   },
   mounted() {

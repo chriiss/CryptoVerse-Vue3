@@ -32,11 +32,8 @@ export default {
             })
         },
         handleScroll() {
-            if(window.pageYOffset>50){
-                if(this.view.topOfPage) this.view.topOfPage = false;
-            } else {
-                if(!this.view.topOfPage) this.view.topOfPage = true;
-            }
+            let scroll = (window.pageYOffset>50) ? this.view.topOfPage = false : this.view.topOfPage = true
+            return scroll;
         }
 
     },
@@ -47,43 +44,18 @@ export default {
             })
         },
         getSelectFilterCategory() {
-            if(this.sortBy === "11") {
-                return this.categoryData.sort((a,b) => {
-                    return b.market_cap - a.market_cap;
-                })
-            }
 
-            if(this.sortBy === "12") {
-                return this.categoryData.sort((a,b) => {
-                    return a.market_cap - b.market_cap;
-                })
+            const sortTypesCategory = {
+                11: (a, b) =>  b.market_cap - a.market_cap,
+                12: (a, b) => a.market_cap - b.market_cap,
+                13: (a, b) => b.volume_24h - a.volume_24h,
+                14: (a, b) => a.volume_24h - b.volume_24h,
+                15: (a, b) => b.market_cap_change_24h - a.market_cap_change_24h,
+                16: (a, b) => a.market_cap_change_24h - b.market_cap_change_24h,
             }
+            return this.categoryData.sort(sortTypesCategory[this.sortBy]);
 
-            if(this.sortBy === "13") {
-                return this.categoryData.sort((a,b) => {
-                    return b.volume_24h - a.volume_24h;
-                })
-            }
-
-            if(this.sortBy === "14") {
-                return this.categoryData.sort((a,b) => {
-                    return a.volume_24h - b.volume_24h;
-                })
-            }
-
-            if(this.sortBy === "15") {
-                return this.categoryData.sort((a,b) => {
-                    return b.market_cap_change_24h - a.market_cap_change_24h;
-                })
-            }
-
-            if(this.sortBy === "16") {
-                return this.categoryData.sort((a,b) => {
-                    return a.market_cap_change_24h - b.market_cap_change_24h;
-                })
-            }
         }
-
     },
     mounted() {
         this.getCategoryData();

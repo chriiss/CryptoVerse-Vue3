@@ -32,11 +32,8 @@ export default {
       })
     },
     handleScroll(){
-      if(window.pageYOffset>50){
-        if(this.view.topOfPage) this.view.topOfPage = false;
-      } else {
-        if(!this.view.topOfPage) this.view.topOfPage = true;
-      }
+      let scroll = (window.pageYOffset>50) ? this.view.topOfPage = false : this.view.topOfPage = true
+      return scroll;
     }
   },
   computed: {
@@ -49,36 +46,15 @@ export default {
       })
     },
     getSelectFiltered() {
-      if(this.sortBy === "1") {
-        return this.cryptoData.sort(function(a,b){
-       		return b.current_price - a.current_price;
-        })
+      const sortTypesHome = {
+        1: (a, b) => b.current_price - a.current_price,
+        2: (a, b) => a.current_price - b.current_price,
+        3: (a, b) => b.market_cap - a.market_cap,
+        4: (a, b) => a.market_cap - b.market_cap,
+        5: (a, b) => b.market_cap_change_percentage_24h - a.market_cap_change_percentage_24h,
+        6: (a, b) => a.market_cap_change_percentage_24h - b.market_cap_change_percentage_24h,
       }
-      if(this.sortBy === "2") {
-        return this.cryptoData.sort(function(a,b){
-       		return a.current_price - b.current_price;
-        })
-      }
-      if(this.sortBy === "3") {
-        return this.cryptoData.sort(function(a,b){
-       		return b.market_cap - a.market_cap;
-        })
-      }
-      if(this.sortBy === "4") {
-        return this.cryptoData.sort(function(a,b){
-       		return a.market_cap - b.market_cap;
-        })
-      }
-      if(this.sortBy === "5") {
-        return this.cryptoData.sort(function(a,b){
-       		return b.market_cap_change_percentage_24h - a.market_cap_change_percentage_24h;
-        })
-      }
-      if(this.sortBy === "6") {
-        return this.cryptoData.sort(function(a,b){
-       		return a.market_cap_change_percentage_24h - b.market_cap_change_percentage_24h;
-        })
-      }
+      return this.cryptoData.sort(sortTypesHome[this.sortBy]);
     }
   },
   mounted() {
