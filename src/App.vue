@@ -14,8 +14,8 @@ import HeaderData from '@/components/HeaderData.vue'
 </template>
 
 <style lang="scss">
-@import "./assets/var.scss";
-@import "./assets/mixin.scss";
+@use "./assets/var.scss" as * ;
+@use "./assets/mixin.scss" as *;
 
 * {
   color: $primary_color !important;

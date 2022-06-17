@@ -61,7 +61,7 @@ export default {
 
 
 <style lang="scss">
-@import "../assets/var.scss";
+@use "../assets/var.scss" as *;
 
 .text {
     color: $primary_color;

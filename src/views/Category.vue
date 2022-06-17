@@ -113,7 +113,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../assets/var.scss";
+@use "../assets/var.scss" as *;
 
 .img_space {
     margin-left: $rem_pos*0.2;

@@ -19,7 +19,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../assets/var.scss";
+@use "../assets/var.scss" as *;
 
 nav {
   padding: $rem_pos*1;

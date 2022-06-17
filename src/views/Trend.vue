@@ -53,8 +53,7 @@ export default {
 
 
 <style lang="scss">
-
-@import "../assets/var.scss";
+@use "../assets/var.scss" as *;
 
 .title_bloc {
   padding-top: $rem_pos*3;

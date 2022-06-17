@@ -113,8 +113,6 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../assets/var.scss";
-
 .url {
   word-break: break-word;
 }
