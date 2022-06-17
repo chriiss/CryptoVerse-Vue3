@@ -95,11 +95,11 @@ export default {
             <td>
               <span class="d-flex">
                 <img :src="crypto.image" :alt="crypto.name"/>
-                <span class="table_pos">&nbsp;{{crypto.market_cap_rank}} {{crypto.name}} <br><span class="symbol">{{crypto.symbol}}</span></span> 
+                <span class="table_pos">&nbsp;{{crypto.market_cap_rank}} {{crypto.name}} <br><span class="symbol">{{crypto.symbol}}</span></span>
               </span>
             </td>
 
-            <td>${{crypto.current_price.toFixed(2)}}</td>
+            <td>${{crypto.current_price}}</td>
 
             <div class="d-flex flex-column bd-highlight mb-3">
               <td><span>24h:</span> <span :class="(crypto.market_cap_change_percentage_24h <= 0) ? 'red' : 'green'">{{crypto.market_cap_change_percentage_24h.toFixed(2)}}%</span></td>
